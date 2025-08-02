@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Videojuegos</title>
+    <script src="js/tienda.js" defer></script> 
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Tienda de Videojuegos</h1>
+            <p class="subtitle">Tu destino favorito para los mejores videojuegos</p>
+        </header>
+
+        <div class="main-content">
+            <div class="juegos-section">
+                <h2 class="section-title">🎯 Administración de Juegos</h2>
+                
+                <div class="admin-section">
+                    <h3>➕ Agregar Nuevo Juego</h3>
+                    <form id="form-agregar-juego" class="admin-form">
+                        <div class="input-group">
+                            <label for="nuevo-nombre">Nombre:</label>
+                            <input type="text" id="nuevo-nombre" placeholder="Ej: Cyberpunk 2077" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="nuevo-precio">Precio ($):</label>
+                            <input type="number" id="nuevo-precio" step="0.01" min="0" placeholder="59.99" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="nueva-descripcion">Descripción:</label>
+                            <textarea id="nueva-descripcion" placeholder="Descripción del juego..." rows="2"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">➕ Agregar</button>
+                    </form>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-juegos">4</div>
+                        <div class="stat-label">Juegos Disponibles</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="items-carrito">0</div>
+                        <div class="stat-label">Items en Carrito</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$<span id="valor-inventario">260</span></div>
+                        <div class="stat-label">Valor Inventario</div>
+                    </div>
+                </div>
+
+                <h3>🎮 Catálogo de Juegos</h3>
+                <div id="juegos-container" class="juegos-grid">
+                    <!-- Los juegos se cargarán dinámicamente aquí -->
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="btn btn-danger" data-action="limpiar-catalogo">🗑️ Limpiar Catálogo</button>
+                    <button class="btn btn-warning" data-action="restaurar-catalogo">🔄 Restaurar Catálogo Original</button>
+                </div>
+            </div>
+
+            <div class="carrito-section">
+                <h2 class="section-title">🛒 Carrito de Compras</h2>
+                
+                <div id="carrito-items">
+                    <div class="empty-state">
+                        <h3>Carrito vacío</h3>
+                        <p>¡Agrega algunos juegos increíbles!</p>
+                    </div>
+                </div>
+
+                <div class="carrito-total">
+                    Total: $<span id="total-carrito">0.00</span>
+                </div>
+
+                <div class="carrito-actions">
+                    <button class="btn btn-success" data-action="finalizar-compra">
+                        ✅ Finalizar Compra
+                    </button>
+                    <button class="btn btn-danger" data-action="vaciar-carrito">
+                        🗑️ Vaciar Carrito
+                    </button>
+                    <button class="btn btn-warning" data-action="guardar-carrito">
+                        💾 Guardar para Después
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Versión 2.0 - Proyecto JS Entrega 2 | DOM + LocalStorage + Eventos</p>
+        </div>
+    </div>
+</body>
+</html>
